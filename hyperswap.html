@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>HyperSwap</title>
+	<link rel="shortcut icon" href="/hyperswap.png" type="image/png">
+    <link href="https://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
+    <style>
+      body {
+        padding-top: 40px;
+        padding-bottom: 20px;
+        background-color: #f5f5f5;
+		overflow-x:hidden;
+      }
+      #content {
+        position: relative;
+        margin: 0 auto;
+        width: 750px;
+        background: #fff;
+        padding: 20px;
+        border: 1px solid #e5e5e5;
+        -webkit-border-radius: 5px;
+           -moz-border-radius: 5px;
+                border-radius: 5px;
+        -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.05);
+           -moz-box-shadow: 0 1px 2px rgba(0,0,0,.05);
+                box-shadow: 0 1px 2px rgba(0,0,0,.05);
+      }
+      #alert {
+        display: none;
+        position: absolute;
+        width: 740px;
+        top: -40px;
+        left: 0;
+      }
+	  
+	.header img {
+	  float: left;
+	  width: 64px;
+	  height: 64px;
+	}
+
+	.header h1 {
+	  position: relative;
+	  top: 10px;
+	  left: 10px;
+	}
+
+	input { width: 320px}
+	overflow-x:hidden;
+
+	
+    </style>
+  </head>
+  <body>
+    <div id="content">
+		<div class="header">
+		<img src="hyperswap.png"  alt="logo" />
+		<h1>HyperSwap</h1>
+		</div>
+      <div id="alert" class="alert fade in alert-success">
+        <span class="msg"></span>
+      </div>
+      <hr>
+      <p><b>Add Rule:</b></p>
+      <form class="form-inline">
+        <fieldset>
+          <input type="text" id="from" placeholder="From" value="">
+          <i class="icon-arrow-right"></i>
+          <input type="text" id="to" placeholder="To" value="">
+          <button type="button" class="btn" id="add"><i class="icon-plus"></i> </button>
+        </fieldset>
+      </form>
+      <div id="redirects">
+        <h4>Redirection Rules</h4>
+        <table class="table table-striped">
+          <thead><tr><th>From</th><th>To</th><th width="80">&nbsp;</th></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </div>
+  </body>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+  <script src="hyperswap.js"></script>
+  <script id="table_row" type="text/x-javascript-tmpl">
+    <tr>
+      <td>{{from}}</td>
+      <td>{{to}}</td>
+      <td>
+        <button class="remove" value="{{id}}"><i class="icon-remove"></i> </button>
+      </td>
+    </tr>
+  </script>
+</html>
